@@ -1,5 +1,14 @@
-package com.outatimestudios.calcengine;
+package com.outatimestudios.myapp;
 
+
+import com.outatimestudios.calcengine.CalculateHelper;
+import com.outatimestudios.calcengine.InvalidStatementException;
+import com.outatimestudios.calcengine.MathEquation;
+import com.outatimestudios.calcengine.CalculateBase;
+import com.outatimestudios.calcengine.Adder;
+import com.outatimestudios.calcengine.Subtractor;
+import com.outatimestudios.calcengine.Multiplier;
+import com.outatimestudios.calcengine.Divider;
 
 public class Main {
 
