@@ -1,14 +1,7 @@
 package com.outatimestudios.myapp;
 
 
-import com.outatimestudios.calcengine.CalculateHelper;
-import com.outatimestudios.calcengine.InvalidStatementException;
-import com.outatimestudios.calcengine.MathEquation;
-import com.outatimestudios.calcengine.CalculateBase;
-import com.outatimestudios.calcengine.Adder;
-import com.outatimestudios.calcengine.Subtractor;
-import com.outatimestudios.calcengine.Multiplier;
-import com.outatimestudios.calcengine.Divider;
+import com.outatimestudios.calcengine.*;
 
 public class Main {
 
@@ -17,6 +10,23 @@ public class Main {
 //        useMathEquation();
 //        useCalculatorBase();
 
+//        useCalculateHelper();
+        String[] statements = {
+                "add 25.0 92.0",    // 25.0 + 92.0 = 117.0
+        };
+
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+                new Adder()
+        });
+        for(String statement : statements) {
+            String output = helper.process(statement);
+            System.out.println(output);
+        }
+
+
+    }
+
+    static void useCalculateHelper() {
         String[] statements = {
                 "add 1.0",              // Error: incorrect number of values
                 "add xx 25.0",          // Error : non-numeric data
@@ -38,8 +48,6 @@ public class Main {
                     System.out.println("  Original exception: " + e.getCause().getMessage());
             }
         }
-
-
     }
 
     static void useMathEquation() {
